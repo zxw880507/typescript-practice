@@ -1,17 +1,17 @@
 // Math Operations
-function add(a, b) {
+function add(a: number, b: number) {
   return a + b;
 }
-function subtract(a, b) {
+function subtract(a: number, b: number) {
   return a - b;
 }
-function multiply(a, b) {
+function multiply(a: number, b: number) {
   return a * b;
 }
-function divide(a, b) {
+function divide(a: number, b: number) {
   return a / b;
 }
-function wrongAdd(a, b) {
+function wrongAdd(a: number, b: number) {
   return a + b + "";
 }
 
