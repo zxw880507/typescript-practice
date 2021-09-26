@@ -1,8 +1,6 @@
-"use strict";
-exports.__esModule = true;
 // Optional Parameters
 function proclaim(status) {
-    console.log("I'm " + (status || "not ready..."));
+    console.log(`I'm ${status || "not ready..."}`);
 }
 proclaim();
 proclaim("ready?");
@@ -14,11 +12,9 @@ proclaim("ready!");
  * @param repeat - The second input number, default 1
  * @returns nothing
  */
-function proclaim1(status, repeat) {
-    if (status === void 0) { status = "not ready..."; }
-    if (repeat === void 0) { repeat = 1; }
-    for (var i = 0; i < repeat; i += 1) {
-        console.log("I'm " + status);
+function proclaim1(status = "not ready...", repeat = 1) {
+    for (let i = 0; i < repeat; i += 1) {
+        console.log(`I'm ${status}`);
     }
 }
 proclaim1();
@@ -32,36 +28,36 @@ You must not type any numbers into your code. */
 function getRandomNumber() {
     return Math.random();
 }
-var myVar = getRandomNumber();
+const myVar = getRandomNumber();
 // Explicit Return Types
-var resources_1 = require("./resources");
+import { getUserChoice, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, } from "./resources";
 function returnString() {
-    var num = (0, resources_1.getUserChoice)();
+    let num = getUserChoice();
     switch (num) {
         case 1:
-            return (0, resources_1.f1)();
+            return f1();
         case 2:
-            return (0, resources_1.f2)();
+            return f2();
         case 3:
-            return (0, resources_1.f3)();
+            return f3();
         case 4:
-            return (0, resources_1.f4)();
+            return f4();
         case 5:
-            return (0, resources_1.f5)();
+            return f5();
         case 6:
-            return (0, resources_1.f6)();
+            return f6();
         case 7:
-            return (0, resources_1.f7)();
+            return f7();
         case 8:
-            return (0, resources_1.f8)();
+            return f8();
         case 9:
-            return (0, resources_1.f9)();
+            return f9();
         case 10:
-            return (0, resources_1.f10)();
+            return f10();
         case 11:
-            return (0, resources_1.f11)();
+            return f11();
         case 12:
-            return (0, resources_1.f12)();
+            return f12();
     }
     return "randomString";
 }
@@ -74,7 +70,7 @@ console.log(returnString());
  * @returns nothing
  */
 function makeFruitSalad(fruit1, fruit2) {
-    var salad = fruit1 + fruit2 + fruit2 + fruit1 + fruit2 + fruit1 + fruit1;
+    let salad = fruit1 + fruit2 + fruit2 + fruit1 + fruit2 + fruit1 + fruit1;
     console.log(salad);
 }
 makeFruitSalad("banana", "pineapple");
@@ -87,11 +83,11 @@ function determineCulprit() {
 }
 function doSleuthing(numberOfClues, clue1, clue2, suspect1, suspect2) {
     console.log("I am a famous detective and I will solve the crime.");
-    var unnecessaryVariable = "Why is this here?";
+    let unnecessaryVariable = "Why is this here?";
     unnecessaryVariable = useMagnifyingGlass();
     console.log("Now I consider the first clue: ", clue1);
     console.log("Now I consider the second clue: ", clue2);
-    var culpritNumber = determineCulprit();
+    let culpritNumber = determineCulprit();
     console.log("Now, I will return to you the culprit. There but for the grace of God go we.");
     if (culpritNumber == 1) {
         return suspect1;
@@ -101,5 +97,5 @@ function doSleuthing(numberOfClues, clue1, clue2, suspect1, suspect2) {
     }
     return "I couldn't figure out who drank the priceless milk. :( :(";
 }
-var answer = doSleuthing(2, "The parrot heard everything!", "All the doors and windows were shut from the INSIDE.", "Burglar Bob", "Saint Sam");
+let answer = doSleuthing(2, "The parrot heard everything!", "All the doors and windows were shut from the INSIDE.", "Burglar Bob", "Saint Sam");
 console.log("The culprit was none other than ", answer, "!");

@@ -17,7 +17,7 @@ function wrongAdd(a, b) {
 // Math Tutor Function That Accepts a Callback
 function mathTutor(operationCallback) {
     console.log("Let's learn how to", operationCallback.name, "!");
-    var value25 = operationCallback(2, 5);
+    let value25 = operationCallback(2, 5);
     console.log("When we", operationCallback.name, "2 and 5, we get", value25, ".");
     console.log("When we", operationCallback.name, value25, "and 7, we get", operationCallback(value25, 7), ".");
     console.log("Now fill out this worksheet.");

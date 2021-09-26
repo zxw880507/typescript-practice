@@ -1,27 +1,27 @@
 // Array Type Annotations
 // Arrays:
-var bestNumbers = [7, 77, 4];
-var bestLunches = ["chicken soup", "non-chicken soup"];
-var bestBreakfasts = [
+let bestNumbers = [7, 77, 4];
+let bestLunches = ["chicken soup", "non-chicken soup"];
+let bestBreakfasts = [
     "fasting",
     "oatmeal",
     "tamago kake gohan",
     "any kind of soup",
 ];
-var bestBooleans = [true, false];
+let bestBooleans = [true, false];
 // Multi-dimensional Arrays:
-var bestMealPlan = [
+let bestMealPlan = [
     bestLunches,
     bestBreakfasts,
     ["baked potato", "mashed potato"],
 ];
-var bestBooleansTwice = [bestBooleans, bestBooleans];
-var numbersMulti = [
+let bestBooleansTwice = [bestBooleans, bestBooleans];
+let numbersMulti = [
     [[1], [2, 3]],
     [[7], bestNumbers],
 ];
 // Tuples
-var favoriteCoordinates = [
+let favoriteCoordinates = [
     40,
     43.2,
     "N",
@@ -31,7 +31,7 @@ var favoriteCoordinates = [
 ];
 favoriteCoordinates = [17, 45, "N", 142, 30, "E"];
 // Array Type Inference
-var dogTup = [
+let dogTup = [
     "dog",
     "brown fur",
     "curly tail",
@@ -39,28 +39,24 @@ var dogTup = [
 ];
 // Your code goes here:
 // let myArr: string[];
-var myArr = dogTup.concat(dogTup);
+let myArr = dogTup.concat(dogTup);
 myArr[50] = "not a dog";
 // Rest Parameters
-function addPower(p) {
-    var numsToAdd = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        numsToAdd[_i - 1] = arguments[_i];
-    }
-    var answer = 0;
-    for (var i = 0; i < numsToAdd.length; i++) {
+function addPower(p, ...numsToAdd) {
+    let answer = 0;
+    for (let i = 0; i < numsToAdd.length; i++) {
         answer += Math.pow(numsToAdd[i], p);
     }
     return answer;
 }
 // Spread Syntax
 function performDanceMove(moveName, moveReps, hasFlair) {
-    console.log("I do the " + moveName + " " + moveReps + " times !");
+    console.log(`I do the ${moveName} ${moveReps} times !`);
     if (hasFlair) {
         console.log("I do it with flair!");
     }
 }
-var danceMoves = [
+let danceMoves = [
     ["chicken beak", 4, false],
     ["wing flap", 4, false],
     ["tail feather shake", 4, false],
@@ -70,12 +66,11 @@ var danceMoves = [
     ["tail feather shake", 4, true],
     ["clap", 4, true],
 ];
-for (var _i = 0, danceMoves_1 = danceMoves; _i < danceMoves_1.length; _i++) {
-    var move = danceMoves_1[_i];
-    performDanceMove.apply(void 0, move);
+for (let move of danceMoves) {
+    performDanceMove(...move);
 }
 // review
-var monster = [
+let monster = [
     [],
     [],
     [[]],

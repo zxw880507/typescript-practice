@@ -1,6 +1,6 @@
 // Object Types
 function sayHappyBirthdayWithObject(personObject) {
-    var output = "";
+    let output = "";
     output += "Happy Birthday " + personObject.name + "! ";
     output += "You are now " + personObject.age + " years old! ";
     output +=
@@ -13,7 +13,7 @@ function sayHappyBirthdayWithObject(personObject) {
     output += "receive it! \n";
     console.log(output);
 }
-var birthdayBabies = [
+let birthdayBabies = [
     { name: "Liam", age: 0, giftWish: "karate skills", success: false },
     { name: "Olivia", age: 0, giftWish: "a bright future", success: true },
     { name: "Ava", age: 0, giftWish: "$0.25", success: true },

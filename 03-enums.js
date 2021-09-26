@@ -1,5 +1,5 @@
-var petOnSale = "chinchilla";
-var ordersArray = [
+let petOnSale = "chinchilla";
+let ordersArray = [
     ["rat", 2],
     ["chinchilla", 1],
     ["hamster", 2],
@@ -13,8 +13,8 @@ var Pet;
     Pet[Pet["Chinchilla"] = 2] = "Chinchilla";
     Pet[Pet["Tarantula"] = 3] = "Tarantula";
 })(Pet || (Pet = {}));
-var petOnSaleTS = Pet.Chinchilla;
-var ordersArrayTS = [
+const petOnSaleTS = Pet.Chinchilla;
+const ordersArrayTS = [
     [Pet.Rat, 2],
     [Pet.Chinchilla, 1],
     [Pet.Hamster, 2],
