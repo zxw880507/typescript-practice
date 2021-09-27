@@ -3,22 +3,25 @@
 // K specify the set of properties of T that should set to Readonly. When K is not provided, it should make all properties readonly just like the normal Readonly<T>.
 
 // For example
-interface Todo {
-  title: string;
-  description: string;
-  completed: boolean;
+
+namespace test {
+  interface Todo {
+    title: string;
+    description: string;
+    completed: boolean;
+  }
+  type MyReadonly2<T, K extends keyof T = keyof T> = {
+    readonly [key in K]: T[key];
+  } &
+    T;
+
+  const todo: MyReadonly2<Todo, "title" | "description"> = {
+    title: "Hey",
+    description: "foobar",
+    completed: false,
+  };
+
+  todo.title = "Hello"; // Error: cannot reassign a readonly property
+  todo.description = "barFoo"; // Error: cannot reassign a readonly property
+  todo.completed = true; // OK
 }
-type MyReadonly2<T, K extends keyof T = keyof T> = {
-  readonly [key in K]: T[key];
-} &
-  T;
-
-const todo: MyReadonly2<Todo, "title" | "description"> = {
-  title: "Hey",
-  description: "foobar",
-  completed: false,
-};
-
-todo.title = "Hello"; // Error: cannot reassign a readonly property
-todo.description = "barFoo"; // Error: cannot reassign a readonly property
-todo.completed = true; // OK
